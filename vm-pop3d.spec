@@ -1,7 +1,7 @@
 %define oldname	gnu-pop3d
 %define name	vm-pop3d
 %define version	1.1.6
-%define release %mkrel 5
+%define release %mkrel 6
 
 Name:		%{name}
 Version:	%{version}
