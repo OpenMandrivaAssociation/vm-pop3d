@@ -1,17 +1,18 @@
 %define oldname	gnu-pop3d
 %define name	vm-pop3d
 %define version	1.1.6
-%define release 4mdk
+%define release %mkrel 5
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-License:	GPL
+License:	GPLv2+
 Group:		Networking/Other
 Source0:	ftp://ftp.nodomainname.net/pub/gnu-pop3d/current/%{name}-%{version}.tar.bz2
 Source1:	%{name}-xinetd.bz2
 Patch0:		%{name}-popbsmtp.patch.bz2
 Patch1:		%{name}-1.1.6-headerfix.patch.bz2
+Patch2:		%{name}-pamd.patch
 Summary:	Virtualmail-pop3d, fork of gnu-pop3d
 URL:		http://www.reedmedia.net/software/virtualmail-pop3d/
 Prereq:		rpm-helper
@@ -30,6 +31,7 @@ packages doc directory for more information.
 %setup -q
 %patch -p0 -b .popbsmtp
 %patch1 -p1 -b .headerfix
+%patch2 -p1
 
 %build
 %configure	--enable-pam
