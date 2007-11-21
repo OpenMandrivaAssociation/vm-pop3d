@@ -15,10 +15,11 @@ Patch1:		%{name}-1.1.6-headerfix.patch.bz2
 Patch2:		%{name}-pamd.patch
 Summary:	Virtualmail-pop3d, fork of gnu-pop3d
 URL:		http://www.reedmedia.net/software/virtualmail-pop3d/
-Prereq:		rpm-helper
 Requires:	xinetd
 Obsoletes:	ids-pop3d %{oldname}
 Provides :	ids-pop3d %{oldname}
+Requires(post):	rpm-helper
+Requires(preun):rpm-helper
 BuildRequires:	pam-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
