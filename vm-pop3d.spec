@@ -21,6 +21,7 @@ Provides :	ids-pop3d %{oldname}
 Requires(post):	rpm-helper
 Requires(preun):rpm-helper
 BuildRequires:	pam-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The GNU POP3 server, or GNU POP. This is a small, fast, efficient POP3 server.
