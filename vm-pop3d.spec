@@ -35,7 +35,7 @@ packages doc directory for more information.
 
 %build
 %configure	--enable-pam
-%make CFLAGS="$RPM_OPT_FLAGS"
+%make CFLAGS="%{optflags}" LDFLAGS="%{ldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
