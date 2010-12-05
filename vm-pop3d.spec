@@ -13,6 +13,7 @@ Source1:	%{name}-xinetd.bz2
 Patch0:		%{name}-popbsmtp.patch.bz2
 Patch1:		%{name}-1.1.6-headerfix.patch.bz2
 Patch2:		%{name}-pamd.patch
+Patch3:		vm-pop3d-1.1.6-fix-buffer-overflow.patch
 Summary:	Virtualmail-pop3d, fork of gnu-pop3d
 URL:		http://www.reedmedia.net/software/virtualmail-pop3d/
 Requires:	xinetd
@@ -30,9 +31,10 @@ packages doc directory for more information.
 
 %prep
 %setup -q
-%patch -p0 -b .popbsmtp
+%patch0 -p0 -b .popbsmtp
 %patch1 -p1 -b .headerfix
 %patch2 -p1
+%patch3 -p1 -b .overflow~
 
 %build
 %configure	--enable-pam
