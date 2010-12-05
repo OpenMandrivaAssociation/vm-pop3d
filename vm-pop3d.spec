@@ -1,11 +1,8 @@
 %define oldname	gnu-pop3d
-%define name	vm-pop3d
-%define version	1.1.6
-%define release %mkrel 9
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		vm-pop3d
+Version:	1.1.6
+Release:	10
 License:	GPLv2+
 Group:		Networking/Other
 Source0:	ftp://ftp.nodomainname.net/pub/gnu-pop3d/current/%{name}-%{version}.tar.bz2
@@ -31,9 +28,9 @@ packages doc directory for more information.
 
 %prep
 %setup -q
-%patch0 -p0 -b .popbsmtp
-%patch1 -p1 -b .headerfix
-%patch2 -p1
+%patch0 -p0 -b .popbsmtp~
+%patch1 -p1 -b .headerfix~
+%patch2 -p1 -b .pamd~
 %patch3 -p1 -b .overflow~
 
 %build
@@ -64,4 +61,3 @@ rm -rf $RPM_BUILD_ROOT
 #%config %{_initrddir}/%{name}
 %config(noreplace) %{_sysconfdir}/xinetd.d/%{name}
 %config(noreplace) %{_sysconfdir}/pam.d/%{name}
-
