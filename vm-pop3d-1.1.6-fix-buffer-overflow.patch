@@ -1,0 +1,30 @@
+diff -p -up vm-pop3d-1.1.6/uidl.c.overflow~ vm-pop3d-1.1.6/uidl.c
+--- vm-pop3d-1.1.6/uidl.c.overflow~	2010-12-05 05:11:05.000000000 +0100
++++ vm-pop3d-1.1.6/uidl.c	2010-12-05 05:18:56.000000000 +0100
+@@ -19,7 +19,7 @@
+ #define UNIQUE_ID_LENGTH 70
+ 
+ int 
+-uidl(char unique_id[UNIQUE_ID_LENGTH], int mesg)
++uidl(char unique_id[UNIQUE_ID_LENGTH+1], int mesg)
+ {
+   char buffer[256];
+   char *message_id;
+@@ -59,7 +59,7 @@ uidl(char unique_id[UNIQUE_ID_LENGTH], i
+   if (unique_id[0] == '\0') {
+     /* need to make a unique id */
+     /* This is NOT unique! */
+-    memset(unique_id, '\0', UNIQUE_ID_LENGTH);
++    memset(unique_id, '\0', UNIQUE_ID_LENGTH+1);
+     snprintf(unique_id, UNIQUE_ID_LENGTH, "no-message-id-%u", mesg + 1);
+     /* this should really be better than this. Maybe do a hash above. */
+   }
+@@ -70,7 +70,7 @@ int
+ pop3_uidl(const char *arg)
+ {
+   int mesg;
+-  char unique_id[UNIQUE_ID_LENGTH];
++  char unique_id[UNIQUE_ID_LENGTH+1];
+ 
+   if (state != TRANSACTION)
+     return ERR_WRONG_STATE;
