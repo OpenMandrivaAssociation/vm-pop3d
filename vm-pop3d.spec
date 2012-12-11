@@ -61,3 +61,85 @@ rm -rf $RPM_BUILD_ROOT
 #%config %{_initrddir}/%{name}
 %config(noreplace) %{_sysconfdir}/xinetd.d/%{name}
 %config(noreplace) %{_sysconfdir}/pam.d/%{name}
+
+
+%changelog
+* Sun Dec 05 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 1.1.6-10mdv2011.0
++ Revision: 609582
+- link with %%{ldflags}
+- cosmetics
+- fix buffer overflow (mdv#55653)
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 1.1.6-8mdv2009.0
++ Revision: 255577
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Wed Nov 21 2007 Nicolas Vigier <nvigier@mandriva.com> 1.1.6-6mdv2008.1
++ Revision: 111044
+- fix prereq
+- fix pamd config again
+- fix pam config (#32317)
+- import vm-pop3d
+
+
+* Mon Aug 01 2005 Marcel Pol <mpol@mandriva.org> 1.1.6-4mdk
+- P1: fix malformed Message-ID: header (bug #8971)
+
+* Sat Oct 16 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.1.6-3mdk
+- rebuild
+
+* Mon Aug 04 2003 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.1.6-2mdk
+- rebuild
+- drop /sbin/chkconfig from PreReq
+
+* Sat Jan 25 2003 Per Øyvind Karlsen <peroyvind@sintrax.net> 1.1.6-1mdk
+- gnu-pop3d is no longer maintaned, vm-pop3d is a fork of gnu-pop3d
+- Use correct optimize flags
+- Cleanups
+- Updated Patch #0
+- Run from xinetd instead of running as a daemon
+
+* Fri Jan 17 2003 Lenny Cartier <lenny@mandrakesoft.com> 0.9.8-7mdk
+- rebuild
+
+* Thu Feb 14 2002 Lenny Cartier <lenny@mandrakesoft.com> 0.9.8-6mdk
+- Patch to log IP for pop-before-smtp from Ryan (from Todd)
+
+* Thu Jul 19 2001 Lenny Cartier <lenny@mandrakesoft.com> 0.9.8-5mdk
+- rebuild
+
+* Wed Jan 10 2001 Lenny Cartier <lenny@mandrakesoft.com> 0.9.8-4mdk
+- rebuild
+
+* Fri Sep 01 2000 Lenny Cartier <lenny@mandrakesoft.com> 0.9.8-3mdk
+- BM
+- macros
+
+* Thu Apr 27 2000 Lenny Cartier <lenny@mandrakesoft.com> 0.9.8-2mdk 
+- fix group
+
+* Wed Feb 16 2000 Lenny Cartier <lenny@mandrakesoft.com>
+- v0.9.8
+- used srpm provided by Geoffrey Lee <snailtalk@linux-mandrake.com>
+
+* Wed Feb 04 2000 Geoffrey Lee <snailtalk@linux-mandrake.com>
+- forgot to handle bz2 last time...
+ 
+* Wed Feb 02 2000 Geoffrey Lee <snailtalk@linux-mandrake.com>
+- Rebuilt for Mandrake
+ 
+* Wed Mar 31 1999 Edgard Castro <castro@usmatrix.net>
+- Added support to Linux PAM library
+- Using a new init script
+- Major revamp on spec file
+- Discarding all symbols from the executable
+- Changed CFLAGS to use $RPM_OPT_FLAGS
+- Using chkconfig to create init entriess
+- Added default attributes when installing files 

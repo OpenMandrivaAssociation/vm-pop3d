@@ -1,3 +1,5 @@
 sources:
-  "vm-pop3d-1.1.6.tar.bz2:"	3653d96385e037300c72c02aa5adee495c95bc55
-  "vm-pop3d-xinetd.bz2:"	dad0d84f855fc4d7d724bef51e74362251ddbba0
+  "vm-pop3d-1.1.6-headerfix.patch.bz2": 7e97bfa0c1746c6c07d8dd3420504b4884067de0
+  "vm-pop3d-1.1.6.tar.bz2": 3653d96385e037300c72c02aa5adee495c95bc55
+  "vm-pop3d-popbsmtp.patch.bz2": be32c24d411e3a8cf03fb8a151ec8b1dd009c0c1
+  "vm-pop3d-xinetd.bz2": dad0d84f855fc4d7d724bef51e74362251ddbba0
