@@ -2,7 +2,7 @@
 
 Name:		vm-pop3d
 Version:	1.1.6
-Release:	%mkrel 10
+Release:	11
 License:	GPLv2+
 Group:		Networking/Other
 Source0:	ftp://ftp.nodomainname.net/pub/gnu-pop3d/current/%{name}-%{version}.tar.bz2
