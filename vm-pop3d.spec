@@ -18,6 +18,11 @@ Obsoletes:	ids-pop3d %{oldname}
 Provides :	ids-pop3d %{oldname}
 Requires(post):	rpm-helper
 Requires(preun):rpm-helper
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pam-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
